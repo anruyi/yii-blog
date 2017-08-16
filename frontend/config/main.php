@@ -2,8 +2,8 @@
 $params = array_merge(
     require(__DIR__ . '/../../common/config/params.php'),
     require(__DIR__ . '/../../common/config/params-local.php'),
-    require(__DIR__ . '/params.php'),
-    require(__DIR__ . '/params-local.php')
+    require(__DIR__ . '/params.php')
+//    require(__DIR__ . '/params-local.php')
 );
 
 return [
@@ -14,6 +14,9 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
+            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+            //如果是空的将在下面插入一个密钥-这是通过COOKIE验证的要求
+            'cookieValidationKey' => '8mr7xeq6dH9VRU_pAEg9WB2c1wseciO-',
         ],
         'user' => [
             'identityClass' => 'common\models\UserModel',
